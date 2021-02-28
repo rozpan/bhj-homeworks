@@ -1,4 +1,4 @@
-//вариант_1
+//вариант_1 ????????????????????????????????? это корректный варивнт или так не делать?
 /*
 let bigForm = document.getElementById("modal_main");
 let bigForm_2 = document.getElementById("modal_success");
@@ -24,6 +24,7 @@ for (let i = 0; i < buttonModal.length; i++) {
 }
 */
 
+
 //вариант_2
 let bigForm = document.getElementsByClassName("modal");
 let cross = document.getElementsByClassName('modal__close');
@@ -31,8 +32,7 @@ let buttonModal = document.getElementsByClassName("show-success");
 
 for (let i = 0; i < cross.length; i++) {
 	cross[i].onclick = function() {
-		bigForm[0].classList.remove("modal_active");
-		bigForm[1].classList.remove("modal_active");
+		cross[i].closest("div.modal").classList.remove("modal_active");
 		}
 }
 
