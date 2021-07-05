@@ -1,44 +1,17 @@
-//вариант_1 ????????????????????????????????? это корректный варивнт или так не делать?
-/*
-let bigForm = document.getElementById("modal_main");
-let bigForm_2 = document.getElementById("modal_success");
-let cross = document.getElementsByClassName('modal__close');
-let buttonModal = document.getElementsByClassName("show-success");
 
-for (let i = 0; i < cross.length; i++) {
-	cross[i].onclick = function() {
-		cross[i].parentElement.style.display = "none";
-		bigForm.style.display = "none";
-		bigForm_2.style.background = "rgba(0, 0, 0, 0)";
-		}
+let cross = document.querySelectorAll(".modal__close_times");
+let window_1 = document.getElementById("modal_main");
+let window_2 = document.getElementById("modal_success");
+
+cross[0].onclick = function() {
+	window_1.className = "modal";
+}
+cross[1].onclick = function() {
+	window_2.className = "modal";
 }
 
-for (let i = 0; i < buttonModal.length; i++) {
-	buttonModal[i].onclick = function() {
-		let buttonReady = document.getElementById("modal_success");
-		buttonModal[i].style.display = "none";
-		cross[i].parentElement.style.display = "none";
-		buttonReady.style.display = "flex";
-		bigForm.style.display = "none";
-		}
-}
-*/
-
-
-//вариант_2
-let bigForm = document.getElementsByClassName("modal");
-let cross = document.getElementsByClassName('modal__close');
-let buttonModal = document.getElementsByClassName("show-success");
-
-for (let i = 0; i < cross.length; i++) {
-	cross[i].onclick = function() {
-		cross[i].closest("div.modal").classList.remove("modal_active");
-		}
-}
-
-for (let i = 0; i < buttonModal.length; i++) {
-	buttonModal[i].onclick = function() {
-		bigForm[0].classList.remove("modal_active");
-		bigForm[1].classList.toggle("modal_active");
-		}
+let doWell = document.querySelector(".btn");
+doWell.onclick = function() {
+	window_1.className = "modal";
+	window_2.className = "modal modal_active";
 }
